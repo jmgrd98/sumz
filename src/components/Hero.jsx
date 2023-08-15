@@ -13,9 +13,12 @@ export default function Hero() {
                 </button>
             </nav>
 
-            <h1 className={'head_text'}>Summarize Articles with <br/>
+            <h1 className={'head_text'}>Summarize Articles with <br className={'max-md:hidden'}/>
                 <span className={'orange_gradient'}>OpenAI GPT-4</span>
             </h1>
+            <h2 className={'desc'}>
+                Simplify your reading with Sumz, a free tool that summarizes articles using the latest AI technology.
+            </h2>
         </header>
     );
 }
