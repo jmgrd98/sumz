@@ -8,9 +8,13 @@ export default function Hero() {
             <nav className={'flex justify-between items-center w-full mb-10 pt-3'}>
                 <img src={logo} alt={'Sumz Logo'} className={'w-28 object-contain'}/>
 
-                <button type={'button'} onClick={() => window.open('https://github.com/jmgrd98')} className={'black_btn'}>
-                    Github
-                </button>
+                <div className={'flex items-center gap-5'}>
+                    <button type={'button'} onClick={() => window.open('https://github.com/jmgrd98/sumz')}
+                            className={'black_btn'}>
+                        Github
+                    </button>
+                    <span className={'text-black font-bold'}>Give it a star! 🙂</span>
+                </div>
             </nav>
 
             <h1 className={'head_text'}>Summarize Articles with <br className={'max-md:hidden'}/>
