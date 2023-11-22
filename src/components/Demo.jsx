@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {copy, linkIcon, loader, tick} from '../assets';
-import {useLazyGetSummaryQuery} from "../services/article.js";
+import {useLazyGetSummaryQuery, useGetTranslationMutation} from "../services/article.js";
+import Dropdown from './Dropdown.jsx'
 
 export default function Demo() {
 
@@ -12,6 +13,9 @@ export default function Demo() {
     const [allArticles, setAllArticles] = useState([]);
 
     const [getSummary, {error, isFetching}] = useLazyGetSummaryQuery();
+
+    const getTranslation = useGetTranslationMutation();
+
 
     const [copied, setCopied] = useState('');
 
@@ -104,6 +108,8 @@ export default function Demo() {
                                     {article.summary}
                                 </p>
                             </div>
+                            <p className={'font-satoshi font-bold text-gray-600'}>Do you wish to translate this text?</p>
+
                         </div>
                     )
                         )}

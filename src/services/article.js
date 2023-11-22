@@ -18,7 +18,14 @@ export const articleApi = createApi({
         getSummary: builder.query({
             query: (params) => `/summarize?url=${encodeURIComponent(params.articleUrl)}&length=3`
         }),
+        getTranslation: builder.mutation({
+            query: (body) => ({
+                url: '/summarize-text',
+                method: 'POST',
+                body,
+            }),
+        }),
     }),
 });
 
-export const {useGetArticlesQuery, useGetSummaryQuery, useLazyGetSummaryQuery} = articleApi;
+export const {useGetArticlesQuery, useGetSummaryQuery, useLazyGetSummaryQuery, useGetTranslationMutation} = articleApi;
